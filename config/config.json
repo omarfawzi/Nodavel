@@ -5,8 +5,10 @@
     "database": "node_admin",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
-
+    "operatorsAliases": false,
+    "dialectOptions": {
+      "multipleStatements": true
+    }
   },
   "test": {
     "username": "root",

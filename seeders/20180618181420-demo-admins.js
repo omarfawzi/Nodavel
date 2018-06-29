@@ -1,18 +1,16 @@
-var bcrypt = require('bcrypt-nodejs');
+// var bcrypt = require('bcrypt-nodejs');
 
-'use strict';
+const fs = require("fs");
+const path = require("path");
 
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.bulkInsert('admin_users', [{
-            username: 'admin',
-            password: bcrypt.hashSync('admin'),
-            email: 'demo@demo.com',
-            name : 'administrator'
-        }], {});
+        var query = fs.readFileSync(path.join(__dirname, '/../database/admin.sql'));
+        // console.log();
+        return queryInterface.sequelize.query(query.toString());
     },
 
     down: (queryInterface, Sequelize) => {
-        return queryInterface.bulkDelete('admin_users', null, {});
+        return queryInterface.bulkDelete(admin_users, null, {});
     }
 };

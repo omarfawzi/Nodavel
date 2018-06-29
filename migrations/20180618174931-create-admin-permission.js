@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       http_method: {
-        type: Sequelize.JSON
+        type: Sequelize.STRING
       },
       http_path: {
         type: Sequelize.STRING

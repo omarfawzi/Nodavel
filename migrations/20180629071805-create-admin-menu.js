@@ -1,18 +1,27 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('admin_role_users', {
+    return queryInterface.createTable('admin_menus', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_id: {
+      parent_id: {
         type: Sequelize.INTEGER
       },
-      role_id: {
+      order_no: {
         type: Sequelize.INTEGER
+      },
+      title: {
+        type: Sequelize.STRING
+      },
+      icon: {
+        type: Sequelize.STRING
+      },
+      uri: {
+        type: Sequelize.STRING
       },
         created_at: {
             type: Sequelize.DATE(3),
@@ -25,6 +34,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('admin_roles_users');
+    return queryInterface.dropTable('AdminMenus');
   }
 };
