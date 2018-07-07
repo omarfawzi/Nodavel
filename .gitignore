@@ -60,3 +60,6 @@ typings/
 
 # intellij files
 /.idea
+
+/node_modules
+
